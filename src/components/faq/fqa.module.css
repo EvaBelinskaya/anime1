@@ -32,7 +32,7 @@ header h1 {
     padding: 25px;
 }
 
-.faqs .faq {
+.faqs .faq, .faqs .faqOpen {
     margin: 15px;
     padding:15px;
     border-radius: 8px;
@@ -75,11 +75,11 @@ header h1 {
     margin-bottom: 15px;
 }
 
-.faqs .faq .open .faqQuestion::after{
+.faqs .faqOpen .faqQuestion::after{
     transform:translateY(-50%) rotate(180deg);
 }
 
-.faqs .faq .open .faqAnswer {
+.faqs .faqOpen .faqAnswer {
     max-height: 1000px;
     opacity: 1;
 }

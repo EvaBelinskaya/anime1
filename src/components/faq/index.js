@@ -28,19 +28,12 @@ export const Faq = () => {
     ]);
 
     const toggleFAQ = index => {
-        setfaqs(faqs.map((faq,i)=>{
-            if(i === index){
-            faq.open = !faq.open
-            }else {
-                faq.open = false;
-            }
-            return faq;
-
-        }))
+        let previousArray = [...faqs];
+        previousArray[index].open = !previousArray[index].open;
+        setfaqs(previousArray)
     };
 
     return (
-
         <div>
             <div className={styles.logoHolder}>
                 <img src="./logo.png" alt="AMiE" />
@@ -49,12 +42,11 @@ export const Faq = () => {
             <div className={styles.faqs} >
                 {faqs.map((faq, i) => (
                     <div className={styles.faq}>
-                  <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ}/>
+                    <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ}/>
                     </div>
                 ))}
             </div>
-            </div>
-
+        </div>
     )
 };
 

@@ -14,9 +14,9 @@ import {
 
 const Layer = ({ texture, depth, parent, offset }) => {
   const [style, setStyle] = useState({
-    position: "absolute",
+    position: "fixed",
     height: "100vh",
-    width: "100vw",
+    width: "100%",
     top: "0px",
     left: "0px",
     zIndex: depth,
@@ -47,9 +47,7 @@ export function AnimationLandingPage() {
     <section 
       style={{
         height: "100vh",
-        width: "100vw",
         position: "relative",
-        overflow: "hidden"
       }}
       ref={ref}
     >

@@ -2,9 +2,11 @@ import React from "react";
 import styles from "./fqa.module.css";
 
 export const FAQ = ({faq,index, toggleFAQ}) => {
-     return(
+
+    const toggleClass = faq.open ? styles.faqOpen : styles.faq
+     return (
         <div
-            className={"faq"+(faq .open ? 'open' : '')}
+            className={toggleClass}
             key={index}
             onClick={()=> toggleFAQ(index) }
         >
