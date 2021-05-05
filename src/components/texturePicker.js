@@ -1,48 +1,46 @@
-import bgUrl from "../resources/bg.jpg";
-import groundUrl from "../resources/ground.png";
-import Summer_plants_and_treesUrl from "../resources/Summer_plants _and_trees.png"; //summer
+import bg_summerUrl from "../resources/bg_summer.jpg";
 import bg_winterUrl from "../resources/bg_winter.png";
-import clouds_winterUrl from "../resources/clouds_winter.png";
-import plants_and_trees_with_snowUrl from "../resources/plants_and_trees_with_snow.png"; //winter
 import bg_autumnUrl from "../resources/bg_autumn.png";
-import autumn_cloudsUrl from "../resources/autumn_clouds.png";
-import autumn_treesUrl from "../resources/autumn_trees.png";
-import leaves2Url from "../resources/leaves2.png";
+import bg_springUrl from "../resources/bg_spring.jpg"; //background
 import cloudsUrl from "../resources/clouds.png";
-import bg_springUrl from "../resources/bg_spring.jpg";
-import leaves1Url from "../resources/leaves1.png";
-import treesWinter from "../resources/trees_winter.png";
+import clouds_winterUrl from "../resources/clouds_winter.png";
+import clouds_autumnUrl from "../resources/clouds_autumn.png";//clouds
+import treesUrl from "../resources/trees.png";
+import trees_autumnUrl from "../resources/trees_autumn.png";
+import trees_winterUrl from "../resources/trees_winter.png";//trees
+import plantsUrl from "../resources/plants.png";
+import snow_winterUrl from "../resources/snow_winter.png";
+import sun_flare_summerUrl from "../resources/sun_flare_summer.png";
 
 const seasons = {
   Spring: {
-    backGround: bg_springUrl, 
-    clouds: cloudsUrl, 
-    frontGround: leaves2Url, 
-    secondTree: leaves1Url,
-    tree: leaves1Url
+    backGround:bg_springUrl,
+    clouds:cloudsUrl,
+    plants:plantsUrl,
+    trees:treesUrl
   },
-  Winter: {
-    backGround: bg_winterUrl, 
-    clouds: clouds_winterUrl, 
-    frontGround: leaves2Url, 
-    secondTree: treesWinter,
-    tree: treesWinter
+  Winter:{
+    backGround:bg_winterUrl,
+    clouds:clouds_winterUrl,
+    plants:plantsUrl,
+    trees:trees_winterUrl,
+    snow:snow_winterUrl
   },
-  Summer: {
-    backGround: bgUrl, 
-    clouds: cloudsUrl, 
-    frontGround: groundUrl, 
-    Summer_plants_and_treesUrl,
-    leaves1Url
+  Summer:{
+    backGround:bg_summerUrl,
+    clouds:cloudsUrl,
+    sunFlare:sun_flare_summerUrl,
+    plants:plantsUrl,
+    trees:treesUrl,
   },
-  Autumn: {
-    backGround: bg_autumnUrl, 
-    clouds: autumn_cloudsUrl, 
-    frontGround:leaves2Url, 
-    tree: autumn_treesUrl,
-    secondTree: leaves1Url
+  Autumn:{
+    backGround:bg_autumnUrl,
+    clouds:clouds_autumnUrl,
+    plants:plantsUrl,
+    trees:trees_autumnUrl
   }
-}
+};
+
 
 export const getSeasonTextures = (season) => seasons[season];
 
