@@ -10,6 +10,7 @@ export const FAQ = ({faq,index, toggleFAQ}) => {
             key={index}
             onClick={()=> toggleFAQ(index) }
         >
+
             <div className={styles.faqQuestion}>
                 {faq.question}
             </div>

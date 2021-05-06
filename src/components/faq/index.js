@@ -3,28 +3,30 @@ import Header from './header';
 import { FAQ } from './FAQ';
 import styles from './fqa.module.css';
 
+
+
 export const Faq = () => {
     const [faqs, setfaqs] = useState([
         {
             question: "Can mindfulness help with behavior problems?If so,in what way?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium asperiores cupiditate deserunt doloremque dolores error exercitationem labore laboriosam magnam nam nisi nulla officia provident qui recusandae tenetur veniam, vitae!",
-            open: true
-        },
-        {
-            question: "Can mindfulness help with behavior problems?If so,in what way?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium asperiores cupiditate deserunt doloremque dolores error exercitationem labore laboriosam magnam nam nisi nulla officia provident qui recusandae tenetur veniam, vitae!",
+            answer: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at beatae consequuntur corporis dolor ducimus ea earum eligendi esse eveniet, fuga fugiat fugit itaque minima nihil recusandae sint unde ut veniam voluptas? Aperiam assumenda, dignissimos dolor, dolore inventore iure praesentium provident quas sed similique tenetur, voluptas voluptatem. Accusamus cum dolor inventore ipsum iusto natus omnis saepe ullam voluptate voluptatum. Inventore nobis, sequi! Aut corporis, dolores",
             open: false
         },
         {
             question: "Can mindfulness help with behavior problems?If so,in what way?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium asperiores cupiditate deserunt doloremque dolores error exercitationem labore laboriosam magnam nam nisi nulla officia provident qui recusandae tenetur veniam, vitae!",
+            answer: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at beatae consequuntur corporis dolor ducimus ea earum eligendi esse eveniet, fuga fugiat fugit itaque minima nihil recusandae sint unde ut veniam voluptas? Aperiam assumenda, dignissimos dolor, dolore inventore iure praesentium provident quas sed similique tenetur, voluptas voluptatem. Accusamus cum dolor inventore ipsum iusto natus omnis saepe ullam voluptate voluptatum. Inventore nobis, sequi! Aut corporis, dolores",
             open: false
         },
         {
             question: "Can mindfulness help with behavior problems?If so,in what way?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium asperiores cupiditate deserunt doloremque dolores error exercitationem labore laboriosam magnam nam nisi nulla officia provident qui recusandae tenetur veniam, vitae!",
+            answer: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at beatae consequuntur corporis dolor ducimus ea earum eligendi esse eveniet, fuga fugiat fugit itaque minima nihil recusandae sint unde ut veniam voluptas? Aperiam assumenda, dignissimos dolor, dolore inventore iure praesentium provident quas sed similique tenetur, voluptas voluptatem. Accusamus cum dolor inventore ipsum iusto natus omnis saepe ullam voluptate voluptatum. Inventore nobis, sequi! Aut corporis, dolores",
             open: false
-        }
+        },
+        {
+            question: "Can mindfulness help with behavior problems?If so,in what way?",
+            answer: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at beatae consequuntur corporis dolor ducimus ea earum eligendi esse eveniet, fuga fugiat fugit itaque minima nihil recusandae sint unde ut veniam voluptas? Aperiam assumenda, dignissimos dolor, dolore inventore iure praesentium provident quas sed similique tenetur, voluptas voluptatem. Accusamus cum dolor inventore ipsum iusto natus omnis saepe ullam voluptate voluptatum. Inventore nobis, sequi! Aut corporis, dolores",
+            open: false
+        },
     ]);
 
     const toggleFAQ = index => {
