@@ -9,35 +9,113 @@ import treesUrl from "../resources/trees.png";
 import trees_autumnUrl from "../resources/trees_autumn.png";
 import trees_winterUrl from "../resources/trees_winter.png";//trees
 import plantsUrl from "../resources/plants.png";
+import plantsSpring from "../resources/plants spring.png";
 import snow_winterUrl from "../resources/snow_winter.png";
 import sun_flare_summerUrl from "../resources/sun_flare_summer.png";
 
 const seasons = {
   Spring: {
-    backGround:bg_springUrl,
-    clouds:cloudsUrl,
-    plants:plantsUrl,
-    trees:treesUrl
+    layouts: [
+        {
+          name: 'Spring background layout',
+          value: bg_springUrl
+        },
+        {
+          name: 'Spring clouds layout',
+          value: cloudsUrl
+        },
+        {
+          name: 'Spring plants layout',
+          value: plantsSpring,
+          style: {
+            zIndex: 7
+          },
+        },
+        {
+          name: 'Spring trees layout',
+          value: treesUrl,
+          static: true
+        }
+    ]
   },
   Winter:{
-    backGround:bg_winterUrl,
-    clouds:clouds_winterUrl,
-    plants:plantsUrl,
-    trees:trees_winterUrl,
-    snow:snow_winterUrl
+    layouts: [
+      {
+        name: 'Winter background layout',
+        value: bg_winterUrl
+      },
+      {
+        name: 'Winter clouds layout',
+        value: clouds_winterUrl
+      },
+      {
+        name: 'Winter plants layout',
+        value: plantsSpring,
+        style: {
+          zIndex: 7
+        },
+      },
+      {
+        name: 'Winter trees layout',
+        value: trees_winterUrl,
+        static: true
+      }
+    ]
   },
   Summer:{
-    backGround:bg_summerUrl,
-    clouds:cloudsUrl,
-    sunFlare:sun_flare_summerUrl,
-    plants:plantsUrl,
-    trees:treesUrl,
+    layouts: [
+      {
+        name: 'Summer background layout',
+        value: bg_summerUrl
+      },
+      {
+        name: 'Summer clouds layout',
+        value: cloudsUrl
+      },
+      {
+        name: 'Summer plants layout',
+        value: plantsSpring,
+        style: {
+          zIndex: 7
+        },
+      },
+      {
+        name: 'Summer trees layout',
+        value: treesUrl,
+        static: true
+      },
+      {
+        name: 'Summer sun flare layout',
+        value: sun_flare_summerUrl,
+        style: {
+          zIndex: 7
+        },
+      }
+    ]
   },
   Autumn:{
-    backGround:bg_autumnUrl,
-    clouds:clouds_autumnUrl,
-    plants:plantsUrl,
-    trees:trees_autumnUrl
+    layouts: [
+      {
+        name: 'Autumn background layout',
+        value: bg_autumnUrl
+      },
+      {
+        name: 'Autumn clouds layout',
+        value: clouds_autumnUrl
+      },
+      {
+        name: 'Autumn plants layout',
+        value: plantsSpring,
+        style: {
+          zIndex: 7
+        },
+      },
+      {
+        name: 'Autumn trees layout',
+        value: trees_autumnUrl,
+        static: true
+      },
+    ]
   }
 };
 

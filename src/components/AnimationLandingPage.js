@@ -13,28 +13,44 @@ import {
 } from "react-router-dom";
 
 const Layer = ({ texture, depth, parent, offset }) => {
+  const ref = createRef();
   const [style, setStyle] = useState({
     position: "fixed",
-    height: "100vh",
     width: "100%",
-    top: "0px",
     left: "0px",
     zIndex: depth,
-    transition: "all 1s"
+    ...texture.style,
+    transition: "all 1s",
   });
 
   useEffect(() => {
-    parent.current.addEventListener('mousemove', debounce(paralaxEffect))
+    if(!texture.static) {
+      parent.current.addEventListener('mousemove', debounce(paralaxEffect));
+    }
   }, [offset]);
+
+  const  getRandomInt = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
 
 
   const paralaxEffect = (event) => {
     const { clientX, clientY } = event;
-    console.log(clientX, clientY);
-    setStyle({...style, top: clientY / (10*depth), left: clientX / 50*depth})
+    if(texture.name === "Spring plants layout" || texture.name === "Winter plants layout" || texture.name === "Autumn plants layout" || texture.name === "Summer plants layout") {
+      let bottom = clientY / (10*depth);
+      if(bottom > 30) {
+        bottom  = getRandomInt(0, 30);
+      } 
+      setStyle({...style, bottom, left: clientX / 50*depth})
+    }
+    else {
+      setStyle({...style, top: clientY / (10*depth), left: clientX / 50*depth})
+    }
   };
 
-  return <img src={texture} style={style} />
+  return <img src={texture.value} style={style} />
 };
 
 export function AnimationLandingPage() {
@@ -51,10 +67,10 @@ export function AnimationLandingPage() {
       }}
       ref={ref}
     >
-      {Object.keys(textures).map((key, index) => {
+      {textures.layouts.map((texture, index) => {
         return (
           <Layer
-            texture={textures[key]}
+            texture={texture}
             depth={index}
             parent={ref}
             offset={offset}
