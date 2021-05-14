@@ -1,14 +1,19 @@
 import React from 'react';
 import styles from "./fqa.module.css";
+import { useEffect, useState } from 'react';
 //верстка карточки вопроса и ответа
 
 function FaqCard(props) {
-    const { question } = props;
+    const [question, setQuestion] = useState({})
+    const [index] = useState(props.index)
 
-    const toggleFAQ = index => {
-        let previousArray = [...question];
-        previousArray[index].open = !previousArray[index].open;
-        setquestion(previousArray)
+    useEffect(() => {
+        setQuestion(props.question)
+        console.log(props);
+    }, [])
+
+    const toggleFAQ  = () => {
+        setQuestion({...question, open: !question.open})
     };
 
     const toggleClass = question.open ? styles.faqOpen : styles.faq;
@@ -18,7 +23,7 @@ function FaqCard(props) {
             <div
                 className={toggleClass}
                 key={index}
-                onClick={()=> toggleFAQ(index) }
+                onClick={toggleFAQ}
             >
 
                 <div className={styles.questionContainer}>
@@ -28,8 +33,9 @@ function FaqCard(props) {
                         {question.question}
                     </div>
                 </div>
-
+                
                 <div className={styles.answerContainer}>
+                    <div className={styles.shadow}></div>
                     <div className={styles.imgContainerAnswer}>
 
                     </div>
