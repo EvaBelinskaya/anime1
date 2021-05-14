@@ -28,61 +28,100 @@ header h1 {
 .faqs {
     margin: 0 auto;
     padding: 25px;
+    width: calc(100% / 8 * 6 - 20px);
 }
 
 .faqs .faq, .faqs .faqOpen {
     margin: 15px;
-    border-radius: 8px;
-    background-color: #FFAF20;
 }
 
 
-
 .faqs .faq .faqQuestion {
+    padding:20px 0px;
+    background-color: #FFAF20;
+   /* width: 1000px;
+    height: 80px;*/
+    border-top-right-radius: 35px;
     font-family: 'Baloo 2';
-    position: relative;
     font-size: 30px;
-    padding-right: 80px;
     transition: all 0.4s ease;
     color:white;
 }
 
+.faqs .faq .questionContainer{
+    display: flex;
+}
+
 .faqs .faq .faqQuestion::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 0px;
     transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
+}
+
+.faqs .faq .imgContainerQuestion{
+    width: 222.5px;
+    height: 80px;
+    border-bottom-left-radius: 35px;
+    background-color:  #ff5a3a;
+    content: '';
     background-image: url("../../resources/arrow.png");
     background-position: center;
-    background-size: contain;
+    background-size: 40px;
     background-repeat: no-repeat;
     transition: all 0.4s ease-out;
 }
+
+/*.faqs .faq .questionImg{
+
+
+}
+*/
+.faqs .faq .faqOpen .answerContainer{
+    display: flex;
+    justify-content: flex-start;
+    width: 1000px;
+}
+
+.faqs .faq .faqOpen .imgContainerAnswer{
+    background-color: #275E87;
+    width: 222.5px;
+    content: '';
+    background-image: url("../../resources/star.png");
+    background-position: center;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    transition: all 0.4s ease-out;
+    border-bottom-left-radius: 35px;
+}
+
+/*.faqs .faq .faqOpen .answerImg {
+  /*  width: 222.5px;
+    content: '';
+    background-image: url("../../resources/star.png");
+    background-position: center;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    transition: all 0.4s ease-out;
+}*/
 
 .faqs .faq .faqAnswer {
     font-family:'Lato';
     font-size:22px;
     color:white;
     background-color: #275E87;
-    opacity: 35%;
+    opacity: 20%;
     max-height: 0;
     overflow-y: hidden;
     transition: all 0.4s ease-out;
 }
 
+
 .faqs .faq .open .faqQuestion {
 
-    margin-bottom: 15px;
+   margin-bottom: 15px;
 }
-
-
 
 .faqs .faqOpen .faqQuestion::after{
     transform:translateY(-50%) rotate(180deg);
-    background-color: #FF5A3A;
+
 }
 
 .faqs .faqOpen .faqAnswer {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+/*import React, { useState } from "react";
 import Header from './header';
 import { FAQ } from './FAQ';
 import styles from './fqa.module.css';
@@ -6,6 +6,7 @@ import styles from './fqa.module.css';
 
 
 export const Faq = () => {
+
     const [faqs, setfaqs] = useState([
         {
             question: "Can mindfulness help with behavior problems?If so,in what way?",
@@ -42,9 +43,12 @@ export const Faq = () => {
             </div>
             <Header />
             <div className={styles.faqs} >
+
                 {faqs.map((faq, i) => (
                     <div className={styles.faq}>
+
                     <FAQ faq={faq} index={i} toggleFAQ={toggleFAQ}/>
+
                     </div>
                 ))}
             </div>
@@ -52,3 +56,4 @@ export const Faq = () => {
     )
 };
 
+*/
