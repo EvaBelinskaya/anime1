@@ -9,7 +9,7 @@ export const Activity = () => {
 
     const card = getCardById(id);
 
-    const { title, duration, requirmens, age, materials, description, goal } = card;
+    const { title, duration, requirmens, age, materials, description, goal, image } = card;
     
     return (
     card &&
@@ -19,7 +19,12 @@ export const Activity = () => {
 
         <div className={styles.wrapper}>
             <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
-                <div className={styles.cardActive}>
+                <div className={styles.cardActive}
+                    style={{
+                        backgroundImage:`url(${(image)})`,
+                        backgroundSize: "cover"
+                    }}
+                >
                     <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
                     <div className={styles.title}>
                         Activity name ({goal.title})

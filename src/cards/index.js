@@ -80,11 +80,56 @@ export const List = () => {
                 )}
             </div>
             }
+
+            {
+                mode === "SIMPLE" &&
+                <div className={styles.listSimple}>
+                    <div className={styles.column}>
+                        <div className={styles.item}
+                        style={{
+                            backgroundImage:`url(${(cards[0].image)})`,
+                            backgroundSize: "cover"
+                        }}
+                        >
+                        </div>
+                        <div className={styles.item}
+                        style={{
+                            backgroundImage:`url(${(cards[1].image)})`,
+                            backgroundSize: "cover",
+                        }}
+                        >
+                        </div>
+                    </div>
+                    <div className={styles.itemSmall}
+                      style={{
+                        backgroundImage:`url(${(cards[2].image)})`,
+                        backgroundSize: "cover",
+                    }}
+                    >
+                    </div>
+                    <div className={styles.column}>
+                        <div className={styles.item}
+                         style={{
+                            backgroundImage:`url(${(cards[3].image)})`,
+                            backgroundSize: "cover",
+                        }}
+                        >
+                        </div>
+                        <div className={styles.item}
+                         style={{
+                            backgroundImage:`url(${(cards[4].image)})`,
+                            backgroundSize: "cover",
+                        }}
+                        >
+                        </div>
+                    </div>
+                </div>
+            }
            
         </div>
         <div className={styles.controls}>
             <img src={btn_simple} onClick={() => setMode("SIMPLE")}/>
-            <img src={btn_rotate} onClick={() => setMode("ROTATE")}/>
+            <img src={btn_rotate} onClick={() => setMode("ROTATE")}/>s
             <img src={btn_multiple} onClick={() => setMode("MULTIPLE")}/>
         </div>
     </div>
