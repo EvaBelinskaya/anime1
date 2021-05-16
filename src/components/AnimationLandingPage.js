@@ -3,15 +3,15 @@ import { debounce } from "lodash";
 import { getSeasonTextures } from "./texturePicker.js";
 import { getSeason } from "./SeasonsArray.js";
 import { List }  from '../cards';
-/*import { FaqList } from './faq';*/
 import { Activity } from './activity';
+import FaqList from "./faq/FaqList";
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
 } from "react-router-dom";
-import FaqList from "./faq/FaqList";
+
 
 const Layer = ({ texture, depth, parent, offset }) => {
   const ref = createRef();

@@ -7,12 +7,12 @@ export const FaqList = (props) => {
     const [questions, setQuestions] = useState([]);
     const [loading, setLoading] = useState(false);
     useEffect(async () => {
-        setLoading(true)
+        setLoading(true);
         const result = await loadJson('/questions.json');
         console.log(result);
-        setQuestions(result)
+        setQuestions(result);
         setLoading(false)
-    }, [])
+    }, []);
 
     return (
         <>
@@ -33,6 +33,6 @@ export const FaqList = (props) => {
             }
         </>
     )
-}
+};
 
 export default FaqList;

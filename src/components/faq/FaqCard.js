@@ -1,16 +1,16 @@
 import React from 'react';
 import styles from "./fqa.module.css";
 import { useEffect, useState } from 'react';
-//верстка карточки вопроса и ответа
+
 
 function FaqCard(props) {
-    const [question, setQuestion] = useState({})
-    const [index] = useState(props.index)
+    const [question, setQuestion] = useState({});
+    const [index] = useState(props.index);
 
     useEffect(() => {
-        setQuestion(props.question)
+        setQuestion(props.question);
         console.log(props);
-    }, [])
+    }, []);
 
     const toggleFAQ  = () => {
         setQuestion({...question, open: !question.open})

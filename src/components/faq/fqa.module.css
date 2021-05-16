@@ -39,8 +39,6 @@ header h1 {
 .faqs .faq .faqQuestion, .faqs .faqOpen .faqQuestion {
     padding:20px 0px;
     background-color: #FFAF20;
-   /* width: 1000px;
-    height: 80px;*/
     border-top-right-radius: 35px;
     font-family: 'Baloo 2';
     font-size: 20px;
@@ -71,11 +69,6 @@ header h1 {
     transition: all 0.4s ease-out;
 }
 
-/*.faqs .faq .questionImg{
-
-
-}
-*/
 .faqs .faqOpen .answerContainer{
     display: flex;
     justify-content: flex-start;
@@ -131,6 +124,7 @@ header h1 {
 }
 
 .faqs .faqOpen .faqAnswer {
+    color: white;
     max-height: 1000px;
     background-color: rgba(39,94,135, .80);
     width: 100%;
