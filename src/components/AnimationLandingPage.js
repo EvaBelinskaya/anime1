@@ -10,8 +10,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  useLocation
 } from "react-router-dom";
-
 
 const Layer = ({ texture, depth, parent, offset }) => {
   const ref = createRef();
@@ -30,7 +30,7 @@ const Layer = ({ texture, depth, parent, offset }) => {
     }
   }, [offset]);
 
-  const  getRandomInt = (min, max) => {
+  const getRandomInt = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
@@ -51,7 +51,7 @@ const Layer = ({ texture, depth, parent, offset }) => {
     }
   };
 
-  return <img src={texture.value} style={style} />
+  return <img src={texture.value} style={style} className={texture.className} />
 };
 
 export function AnimationLandingPage() {
@@ -59,6 +59,16 @@ export function AnimationLandingPage() {
   const season = getSeason();
   const textures = getSeasonTextures(season);
   const [offset, setOffset] = useState({x: 0, y: 0});
+
+  useEffect(() => {
+    setInterval(() => {
+      const isActivity = window.location.pathname.includes('/activity');
+      const plants = document.querySelector('.plants');
+      if(isActivity)  plants.style.zIndex = 5;
+      else plants.style.zIndex = 7;
+    }, 100);
+    
+   }, [])
 
   return (
     <section 

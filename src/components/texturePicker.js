@@ -30,6 +30,7 @@ const seasons = {
         name: 'Spring plants layout',
         value: plantsSpring,
         static: true,
+        className: 'plants',
         style: {
           zIndex: 7,
           bottom: '0px',
@@ -58,6 +59,7 @@ const seasons = {
       {
         name: 'Winter plants layout',
         value: plantsSpring,
+        className: 'plants',
         static: true,
         style: {
           zIndex: 7,
@@ -87,6 +89,7 @@ const seasons = {
       {
         name: 'Summer plants layout',
         value: plantsSpring,
+        className: 'plants',
         static: true,
         style: {
           zIndex: 7,
@@ -123,6 +126,7 @@ const seasons = {
       {
         name: 'Autumn plants layout',
         value: plantsSpring,
+        className: 'plants',
         static: true,
         style: {
           zIndex: 7,
