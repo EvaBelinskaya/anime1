@@ -2,12 +2,13 @@
 
 .container{
     background-color: #737373;
-    height: 355px;
     width: 228px;
     padding: 32px 22px;
     box-sizing: border-box;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+    position: absolute;
+    z-index: 9;
 }
 
 nav{

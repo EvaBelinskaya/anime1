@@ -1,17 +1,17 @@
-import React, { createRef, useEffect, useState } from "react";
-import { debounce } from "lodash";
-import { getSeasonTextures } from "./texturePicker.js";
-import { getSeason } from "./SeasonsArray.js";
+import React, { createRef, useEffect, useState } from 'react';
+import { debounce } from 'lodash';
+import { getSeasonTextures } from './texturePicker.js';
+import { getSeason } from './SeasonsArray.js';
 import { List }  from '../cards';
 import { Activity } from './activity';
-import FaqList from "./faq/FaqList";
-
+import FaqList from './faq/FaqList';
+import { Menu } from './Menu/Menu';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   useLocation
-} from "react-router-dom";
+} from 'react-router-dom';
 
 const Layer = ({ texture, depth, parent, offset }) => {
   const ref = createRef();
@@ -78,6 +78,7 @@ export function AnimationLandingPage() {
       }}
       ref={ref}
     >
+      <Menu />
       {textures.layouts.map((texture, index) => {
         return (
           <Layer
