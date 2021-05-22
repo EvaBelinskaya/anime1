@@ -1,6 +1,6 @@
 import styles from './card.module.css';
 
-export const Card = ({title, description, image, activeDay, style}) => {
+export const Card = ({title, description, image, activeDay,style}) => {
     return (
     <div className={styles.flipCard} style={style}>
         <div className={styles.flipCardInner}>
