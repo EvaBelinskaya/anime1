@@ -23,8 +23,7 @@ export const List = () => {
 
     const [cards, setCards] = useState([]);
     const [loading, setLoading] = useState(false);
-    useEffect(async () =>
-    {
+    useEffect(async () => {
         setLoading(true);
         const result = await getCards();
         console.log(result);
@@ -49,8 +48,8 @@ export const List = () => {
             {
                 mode === "MULTIPLE" &&
                 <div className={styles.list}>
-                {cards.map(card =>
-                    <Link to={`/activity/${card.id}`}>
+                {cards.map((card, index) =>
+                    <Link to={`/activity/${index}`}>
                         <Card
                             title={card.title}
                             description={card.description}
@@ -71,7 +70,7 @@ export const List = () => {
                 mode === "ROTATE" &&
                 <div className={styles.listRotate}>
                 {cards.map((card, index) =>
-                    <Link to={`/activity/${card.id}`}
+                    <Link to={`/activity/${index}`}
                      style={{
                         position: "absolute",
                         transform: `rotate(${getRotate(index)}deg)`,
@@ -97,7 +96,7 @@ export const List = () => {
                 mode === "SIMPLE" &&
                 <div className={styles.listSimple}>
                     <div className={styles.column}>
-                        <Link to={`/activity/${cards[0].id}`}>
+                        <Link to={`/activity/0`}>
                             <Card
                                 title={cards[0].title}
                                 description={cards[0].description}
@@ -109,7 +108,7 @@ export const List = () => {
                                 goal={cards[0].goal}
                             />
                         </Link>
-                        <Link to={`/activity/${cards[1].id}`}>
+                        <Link to={`/activity/1`}>
                             <Card
                                 title={cards[1].title}
                                 description={cards[1].description}
@@ -122,7 +121,7 @@ export const List = () => {
                             />
                         </Link>
                     </div>
-                    <Link to={`/activity/${cards[2].id}`}>
+                    <Link to={`/activity/2`}>
                         <Card
                             title={cards[2].title}
                             description={cards[2].description}
@@ -137,7 +136,7 @@ export const List = () => {
                     </Link>
 
                     <div className={styles.column}>
-                        <Link to={`/activity/${cards[3].id}`}>
+                        <Link to={`/activity/3`}>
                             <Card
                                 title={cards[3].title}
                                 description={cards[3].description}
@@ -149,7 +148,7 @@ export const List = () => {
                                 goal={cards[3].goal}
                             />
                         </Link>
-                        <Link to={`/activity/${cards[4].id}`}>
+                        <Link to={`/activity/4`}>
                             <Card
                                 title={cards[4].title}
                                 description={cards[4].description}

@@ -3,27 +3,26 @@ import styles from './activity.module.css';
 import { getCardById } from '../../services/card.service';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-export const Activity = () =>
-{
+import { getCards } from '../../services/firebase.service';
+
+export const Activity = () => {
     const { id } = useParams();
     const [cardOpened, setCardOpened] = useState(false);
 
   /*  const card = getCardById(id);*/
-    const [cards, setCards] = useState([]);
+    const [card, setCard] = useState();
     const [loading, setLoading] = useState(false);
-    useEffect(async () =>
-    {
+    useEffect(async () => {
         setLoading(true);
-        const result = await getCards();
-        console.log(result);
-        setCards(result);
+        const cards = await getCards();
+        console.log(cards);
+        setCard(cards[id]);
         setLoading(false)
     }, []);
 
-    const { title, duration, requirmens, age, materials, description, goal } = card;
-
+    // const { title, duration, requirmens, age, materials, description, goal } = card;
     return (
-        card &&
+        card ?
         <div className={styles.shadow}>
             <Link to="/" className={styles.backBtn}>Back</Link>
 
@@ -54,7 +53,7 @@ export const Activity = () =>
                             </span>
                     </div>
                     <section className={styles.value}>
-                        {goal.value}
+                        {card?.goal?.value}
                     </section>
                 </div>
 
@@ -75,7 +74,7 @@ export const Activity = () =>
 
                         </div>
                         <div className={styles.desc}>
-                            {cards.title}
+                            {card.title}
                         </div>
                     </div>
 
@@ -87,7 +86,7 @@ export const Activity = () =>
 
                         </div>
                         <div className={styles.desc}>
-                            {cards.duration} minutes
+                            {card.duration} minutes
                         </div>
                     </div>
 
@@ -99,7 +98,7 @@ export const Activity = () =>
 
                         </div>
                         <div className={styles.desc}>
-                            {requirmens}
+                            {card.requirmens}
                         </div>
                     </div>
 
@@ -110,7 +109,7 @@ export const Activity = () =>
                                      </span>
                         </div>
                         <div className={styles.desc}>
-                            {cards.age}
+                            {card.age}
                         </div>
                     </div>
 
@@ -121,7 +120,7 @@ export const Activity = () =>
                                      </span>
                         </div>
                         <div className={styles.desc}>
-                            {cards.materials}
+                            {card.materials}
                         </div>
                     </div>
 
@@ -133,12 +132,13 @@ export const Activity = () =>
                         </div>
                         <div className={styles.desc}>
                             <div className={styles.scrolltext}>
-                                {cards.description}
+                                {card.description}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        : null
     )
 }
