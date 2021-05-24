@@ -21,6 +21,17 @@ export const List = () => {
         await getCards();
     }, [mode]);
 
+    const [cards, setCards] = useState([]);
+    const [loading, setLoading] = useState(false);
+    useEffect(async () =>
+    {
+        setLoading(true);
+        const result = await getCards();
+        console.log(result);
+        setCards(result);
+        setLoading(false)
+    }, []);
+
     const getRotate = (index) => {
         if(index % 2 === 0) {
             return index * 45 + index * 10;

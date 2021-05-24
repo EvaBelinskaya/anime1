@@ -16,7 +16,7 @@ export const Menu =() => {
             href:'/faq',
         }
     ];
-    const [open, setOpen]= useState (true);
+    const [open, setOpen]= useState (false);
 
     return(
         <div className={styles.container}>

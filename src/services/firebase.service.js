@@ -8,7 +8,7 @@ export const getFaqs = () => {
             return resolve(array);
         });
     })
-}
+};
 
 
 export const getCards = () => {
@@ -19,4 +19,4 @@ export const getCards = () => {
             return resolve(array);
         });
     })
-}
+};

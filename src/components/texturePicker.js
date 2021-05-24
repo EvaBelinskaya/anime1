@@ -24,7 +24,8 @@ const seasons = {
       },
       {
         name: 'Spring clouds layout',
-        value: cloudsUrl
+        value: cloudsUrl,
+          static: true,
       },
       {
         name: 'Spring plants layout',

@@ -8,7 +8,17 @@ export const Activity = () =>
     const { id } = useParams();
     const [cardOpened, setCardOpened] = useState(false);
 
-    const card = getCardById(id);
+  /*  const card = getCardById(id);*/
+    const [cards, setCards] = useState([]);
+    const [loading, setLoading] = useState(false);
+    useEffect(async () =>
+    {
+        setLoading(true);
+        const result = await getCards();
+        console.log(result);
+        setCards(result);
+        setLoading(false)
+    }, []);
 
     const { title, duration, requirmens, age, materials, description, goal } = card;
 
@@ -65,7 +75,7 @@ export const Activity = () =>
 
                         </div>
                         <div className={styles.desc}>
-                            {title}
+                            {cards.title}
                         </div>
                     </div>
 
@@ -77,7 +87,7 @@ export const Activity = () =>
 
                         </div>
                         <div className={styles.desc}>
-                            {duration} minutes
+                            {cards.duration} minutes
                         </div>
                     </div>
 
@@ -100,7 +110,7 @@ export const Activity = () =>
                                      </span>
                         </div>
                         <div className={styles.desc}>
-                            {age}
+                            {cards.age}
                         </div>
                     </div>
 
@@ -111,7 +121,7 @@ export const Activity = () =>
                                      </span>
                         </div>
                         <div className={styles.desc}>
-                            {materials}
+                            {cards.materials}
                         </div>
                     </div>
 
@@ -123,7 +133,7 @@ export const Activity = () =>
                         </div>
                         <div className={styles.desc}>
                             <div className={styles.scrolltext}>
-                                {description}
+                                {cards.description}
                             </div>
                         </div>
                     </div>

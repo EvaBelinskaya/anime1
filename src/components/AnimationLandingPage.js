@@ -70,6 +70,16 @@ export function AnimationLandingPage() {
     
    }, [])
 
+  useEffect(() => {
+    setInterval(() => {
+      const isFaq = window.location.pathname.includes('/faq');
+      const plants = document.querySelector('.plants');
+      if(isFaq)  plants.style.zIndex = 5;
+      else plants.style.zIndex = 7;
+    }, 100);
+
+  }, [])
+
   return (
     <section 
       style={{
