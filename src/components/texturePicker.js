@@ -25,13 +25,14 @@ const seasons = {
       {
         name: 'Spring clouds layout',
         value: cloudsUrl,
-          static: true,
+        static:true,
+
       },
       {
         name: 'Spring plants layout',
         value: plantsSpring,
-        static: true,
         className: 'plants',
+        static: true,
         style: {
           zIndex: 7,
           bottom: '0px',

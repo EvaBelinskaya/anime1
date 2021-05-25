@@ -1,24 +1,25 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import styles from './Menu.module.css';
 import { Link } from './Link.js';
-export const Menu =() => {
+export const Menu = () =>
+{
     const items = [
         {
-            value:'Home',
-            href:'/home',
+            value: 'Home',
+            href: '/',
         },
         {
-            value:'About',
-            href:'/about',
+            value: 'About',
+            href: '/about',
         },
         {
-            value:'FAQ',
-            href:'/faq',
+            value: 'FAQ',
+            href: '/faq',
         }
     ];
-    const [open, setOpen]= useState (false);
+    const [open, setOpen] = useState(true);
 
-    return(
+    return (
         <div className={styles.container}>
             <div className={styles.closeIcon} >X</div>
             <div className={styles.menu}>
@@ -28,11 +29,12 @@ export const Menu =() => {
                     </div>
                 </nav>
 
-                <div className={styles.menu_content} style={{ display:  open ? 'block' : 'none' }}>
+                <div className={styles.menu_content} style={{ display: open ? 'block' : 'none' }}>
                     <Link items={items} />
                 </div>
             </div>
         </div>
+
 
     )
 };

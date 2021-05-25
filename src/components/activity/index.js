@@ -3,16 +3,50 @@ import styles from './activity.module.css';
 import { getCardById } from '../../services/card.service';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getCards } from '../../services/firebase.service';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { PlayButton, Timer } from 'react-soundplayer/components';
+import { withSoundCloudAudio } from 'react-soundplayer/addons';
+import {getCards} from "../../services/firebase.service";
 
-export const Activity = () => {
+const clientId = 'c5a171200f3a0a73a523bba14a1e0a29';
+const resolveUrl = 'https://soundcloud.com/qvenaozv6yzq/grapevocal/s-wSrH0TN9QJv?fbclid=IwAR1O9bmVk5v969rAe8tTv0-Njjs4cZgevTXZR9B_CwUhrseD1WzWdgo4NTg';
+
+const Player = withSoundCloudAudio(props =>
+{
+    let { track, currentTime } = props;
+
+    return (
+        <div className={styles.customplayer}>
+            <PlayButton
+                className={styles.customplayerbtn}
+                onPlayClick={() =>
+                {
+                    console.log('play button clicked!');
+                }}
+                {...props} />
+            <h2 className={styles.customplayertitle}>
+                {track ? track.title : 'Loading...'}
+            </h2>
+            <Timer
+                className={styles.customplayertimer}
+                duration={track ? track.duration / 1000 : 0}
+                currentTime={currentTime}
+                {...props} />
+        </div>
+    );
+});
+
+export const Activity = () =>
+{
     const { id } = useParams();
     const [cardOpened, setCardOpened] = useState(false);
 
-  /*  const card = getCardById(id);*/
-    const [card, setCard] = useState();
+    /*const card = getCardById(id);*/
+    const [card, setCard] = useState([]);
     const [loading, setLoading] = useState(false);
-    useEffect(async () => {
+    useEffect(async () =>
+    {
         setLoading(true);
         const cards = await getCards();
         console.log(cards);
@@ -20,12 +54,17 @@ export const Activity = () => {
         setLoading(false)
     }, []);
 
-    // const { title, duration, requirmens, age, materials, description, goal } = card;
+
+   /* const { title, duration, requirmens, age, materials, description, goal } = card;*/
+
     return (
         card ?
         <div className={styles.shadow}>
             <Link to="/" className={styles.backBtn}>Back</Link>
-
+            <Player
+                clientId={clientId}
+                resolveUrl={resolveUrl}
+                onReady={() => console.log('track is loaded!')} />
 
             <div className={styles.wrapper}>
                 <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
@@ -62,7 +101,9 @@ export const Activity = () => {
                         <div className={styles.title}>picture</div>
                         <div className={styles.desc}></div>
                     </div>
+
                 </section>
+
 
                 <div className={styles.info}>
                     <div className={styles.item}>
@@ -86,7 +127,7 @@ export const Activity = () => {
 
                         </div>
                         <div className={styles.desc}>
-                            {card.duration} minutes
+                            {card.duration}
                         </div>
                     </div>
 
@@ -132,13 +173,14 @@ export const Activity = () => {
                         </div>
                         <div className={styles.desc}>
                             <div className={styles.scrolltext}>
-                                {card.description}
+                                {card.extra}
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
-        : null
+            :null
     )
 }

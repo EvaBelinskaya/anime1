@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Card } from './card';
 import { cards } from '../constants/cards';
 import styles from './list.module.css';
@@ -8,11 +8,12 @@ import btn_rotate from '../resources/btn_rotate.png';
 import btn_multiple from '../resources/btn_multiple.png';
 import { getFullDate } from '../helpers/dateHendlers'; 
 import { CardsWeek } from "./CardsWeek";
-import { getCards } from '../services/firebase.service';
+import {getCards} from '../services/firebase.service';
+
 export const List = () => {
     const [mode, setMode] = useState('MULTIPLE');
 
-    useEffect(async () => {
+    useEffect(async() => {
         if(mode === "ROTATE") {
             const currentDay = getFullDate();
             const elem = cards.findIndex(card => card.activeDay === currentDay);
@@ -23,7 +24,8 @@ export const List = () => {
 
     const [cards, setCards] = useState([]);
     const [loading, setLoading] = useState(false);
-    useEffect(async () => {
+    useEffect(async () =>
+    {
         setLoading(true);
         const result = await getCards();
         console.log(result);
@@ -48,7 +50,7 @@ export const List = () => {
             {
                 mode === "MULTIPLE" &&
                 <div className={styles.list}>
-                {cards.map((card, index) =>
+                {cards.map((card,index) =>
                     <Link to={`/activity/${index}`}>
                         <Card
                             title={card.title}
@@ -91,7 +93,6 @@ export const List = () => {
                 )}
             </div>
             }
-
             {
                 mode === "SIMPLE" &&
                 <div className={styles.listSimple}>
@@ -162,17 +163,19 @@ export const List = () => {
                         </Link>
                     </div>
                 </div>
-
-
             }
         </div>
-            <div className={styles.controls}>
+        <div className={styles.controls}>
             <img src={btn_simple} onClick={() => setMode("SIMPLE")}/>
             <img src={btn_rotate} onClick={() => setMode("ROTATE")}/>
             <img src={btn_multiple} onClick={() => setMode("MULTIPLE")}/>
         </div>
     </div>
     )
-        };
+    
+};
 
 
+// const controls = () => {
+
+// }

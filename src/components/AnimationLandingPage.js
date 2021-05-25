@@ -6,12 +6,14 @@ import { List }  from '../cards';
 import { Activity } from './activity';
 import FaqList from './faq/FaqList';
 import { Menu } from './Menu/Menu';
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   useLocation
 } from 'react-router-dom';
+
 
 const Layer = ({ texture, depth, parent, offset }) => {
   const ref = createRef();
@@ -54,12 +56,13 @@ const Layer = ({ texture, depth, parent, offset }) => {
   return <img src={texture.value} style={style} className={texture.className} />
 };
 
+
+
 export function AnimationLandingPage() {
   const ref = createRef();
   const season = getSeason();
   const textures = getSeasonTextures(season);
   const [offset, setOffset] = useState({x: 0, y: 0});
-
   useEffect(() => {
     setInterval(() => {
       const page = window.location.pathname.includes('/activity') || window.location.pathname.includes('/faq');
@@ -67,8 +70,9 @@ export function AnimationLandingPage() {
       if(page)  plants.style.zIndex = 5;
       else plants.style.zIndex = 7;
     }, 100);
-    
-   }, [])
+
+  }, [])
+
 
   return (
     <section 
