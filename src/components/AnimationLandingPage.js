@@ -13,6 +13,7 @@ import {
   Route,
   useLocation
 } from 'react-router-dom';
+import {About} from "./about/about";
 
 
 const Layer = ({ texture, depth, parent, offset }) => {
@@ -75,6 +76,7 @@ export function AnimationLandingPage() {
 
 
   return (
+    
     <section 
       style={{
         height: "100vh",
@@ -82,7 +84,10 @@ export function AnimationLandingPage() {
       }}
       ref={ref}
     >
+      
+      
       <Menu />
+    
       {textures.layouts.map((texture, index) => {
         return (
           <Layer
@@ -105,6 +110,9 @@ export function AnimationLandingPage() {
             </Route>
             <Route path="/activity/:id" exact>
               <Activity />
+            </Route>
+            <Route path="/about">
+              <About />
             </Route>
           </Switch>
         </Router>
