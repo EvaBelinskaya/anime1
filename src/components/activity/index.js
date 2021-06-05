@@ -70,7 +70,12 @@ export const Activity = () =>
                         />
             <div className={styles.wrapper}>
                 <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
-                    <div className={styles.cardActive}>
+                    <div className={styles.cardActive}
+                        style={{
+                            backgroundImage:`url(${(card.url)})`,
+                            backgroundSize: "cover"
+                        }}
+                    >
                         <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
                         <div className={styles.title}>
                             picture
@@ -99,7 +104,13 @@ export const Activity = () =>
                     </section>
                 </div>
 
-                <section className={styles.card} onClick={() => setCardOpened(true)}>
+                <section className={styles.card}
+                    onClick={() => setCardOpened(true)}
+                    style={{
+                        backgroundImage:`url(${(card.url)})`,
+                        backgroundSize: "cover"
+                    }}
+                >
                     <div className={styles.output}>
                         <div className={styles.title}>picture</div>
                         <div className={styles.desc}></div>

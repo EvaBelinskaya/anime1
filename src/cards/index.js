@@ -58,7 +58,7 @@ export const List = () => {
                         <Card
                             title={card.title}
                             description={card.description}
-                            image={card.image}
+                            image={card.url}
                             requirmens={card.requirmens}
                             age={card.age}
                             materials={card.materials}
