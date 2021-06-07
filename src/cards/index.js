@@ -110,7 +110,7 @@ export const List = () => {
                                     materials={cards[0].materials}
                                     activeDay={cards[0].activeDay}
                                     goal={cards[0].goal}
-                                    category={card.category}
+                                    category={cards[0].category}
                                 />
                             </Link>
                             <Link to={`/activity/1`}>
@@ -123,6 +123,7 @@ export const List = () => {
                                     materials={cards[1].materials}
                                     activeDay={cards[1].activeDay}
                                     goal={cards[1].goal}
+                                    category={cards[1].category}
                                 />
                             </Link>
                         </div>
@@ -136,6 +137,7 @@ export const List = () => {
                                 materials={cards[2].materials}
                                 activeDay={cards[2].activeDay}
                                 goal={cards[2].goal}
+                                category={cards[2].category}
                                 style={{ width: '300px', height: '500px' }}
                             />
                         </Link>
@@ -151,6 +153,7 @@ export const List = () => {
                                     materials={cards[3].materials}
                                     activeDay={cards[3].activeDay}
                                     goal={cards[3].goal}
+                                    category={cards[3].category}
                                 />
                             </Link>
                             <Link to={`/activity/4`}>
@@ -163,6 +166,7 @@ export const List = () => {
                                     materials={cards[4].materials}
                                     activeDay={cards[4].activeDay}
                                     goal={cards[4].goal}
+                                    category={cards[4].category}
                                 />
                             </Link>
                         </div>

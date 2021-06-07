@@ -7,14 +7,14 @@ export const Card = ({ title, description, image, activeDay, style, category }) 
         <div className={styles.flipCard} style={style}>
             <div className={styles.flipCardInner}>
                 <div className={styles.flipCardFront} style={{
-                    backgroundImage: `url(${(image)})`,
+                    backgroundImage: `url(${(selectCategory.image)})`,
                     backgroundSize: "cover"
                 }}>
                     hello world
                 {activeDay}
                 </div>
                 <div className={styles.flipCardBack} style={{
-                    backgroundImage: `url(${(selectCategory.image)})`,
+                    backgroundImage: `url(${(image)})`,
                     backgroundSize: "cover"
                 }}
                 >
