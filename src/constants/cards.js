@@ -4,7 +4,7 @@ export const categories = [
         image: 'categories/music.jpg'
     },
     {
-        name: 'Visual Art',
+        name: 'Visual Arts',
         image: 'categories/visual-art.jpg'
     },
     {
@@ -15,8 +15,16 @@ export const categories = [
         name: 'Dance - Movement',
         image: 'categories/dance-movement.jpg'
     },
-    /*
-        ToDo я добавил не все катагории так как незнаю сколько их и какие картинки к каким подставить.
-        Думаю по примеру сможешь добавить остальные
-    */
+    {
+        name: 'Digital art',
+        image: 'categories/4.jpg'
+    },
+    {
+        name: 'Writing',
+        image: 'categories/7.jpg'
+    },
+    {
+        name: 'stories - poetry',
+        image: 'categories/2.jpg'
+    },
 ];

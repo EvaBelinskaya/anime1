@@ -1,7 +1,8 @@
 import styles from './card.module.css';
 import { getCardImageByCategory } from '../services/card.service';
 
-export const Card = ({ title, description, image, activeDay, style, category }) => {
+export const Card = ({ title, description, image, activeDay, style, category }) =>
+{
     const selectCategory = getCardImageByCategory(category) || '';
     return (
         <div className={styles.flipCard} style={style}>
@@ -10,16 +11,14 @@ export const Card = ({ title, description, image, activeDay, style, category }) 
                     backgroundImage: `url(${(selectCategory.image)})`,
                     backgroundSize: "cover"
                 }}>
-                    hello world
-                {activeDay}
+                    {activeDay}
                 </div>
                 <div className={styles.flipCardBack} style={{
-                    backgroundImage: `url(${(image)})`,
                     backgroundSize: "cover"
                 }}
                 >
-                    <h1>{title}</h1>
-                    <p>{description}</p>
+                    <h1 className={styles.flipCardBacktitle}>{title}</h1>
+                    <p className={styles.flipCardBacktext}>{description}</p>
                 </div>
             </div>
         </div>

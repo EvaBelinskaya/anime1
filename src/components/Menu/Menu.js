@@ -35,10 +35,11 @@ export const Menu = () =>
             {
                 open &&
                 <div className={styles.container}>
+
                     <div className={styles.menu}>
                         <nav>
                             <div className={styles.burgerbtnWhite}
-                                onClick={() => setOpen((currentOpen) => currentOpen = !currentOpen)}
+                                 onClick={() => setOpen((currentOpen) => currentOpen = !currentOpen)}
                             >
                                 <span></span>
                             </div>

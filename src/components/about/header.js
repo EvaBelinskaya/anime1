@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./activity.module.css";
+import styles from "./about.module.css";
 function Header()
 {
     return (
@@ -7,7 +7,6 @@ function Header()
             <header>
                 <div className={styles.logo}></div>
                 <div className={styles.amielogo}></div>
-
 
             </header>
 

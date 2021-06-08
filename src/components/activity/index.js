@@ -58,143 +58,144 @@ export const Activity = () =>
     /* const { title, duration, requirmens, age, materials, description, goal } = card;*/
 
     return (
-        
+
         card ?
-            
-        <div className={styles.shadow}>
-            <Header></Header>
-            <Player
-                            clientId={clientId}
-                            resolveUrl={card.musicUrl}
-                            onReady={() => console.log('track is loaded!')}
-                        />
-            <div className={styles.wrapper}>
-                <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
-                    <div className={styles.cardActive}
-                        style={{
-                            backgroundImage:`url(${(card.url)})`,
-                            backgroundSize: "cover"
-                        }}
-                    >
-                        <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
-                        <div className={styles.title}>
-                            picture
-                        </div>
-                        
-                        <div className={styles.value}>
 
-                        </div>
-                    </div>
-                </div>
+            <div className={styles.shadow}>
+                <Header></Header>
+                <Player
+                    clientId={clientId}
+                    resolveUrl={card.musicUrl}
+                    onReady={() => console.log('track is loaded!')}
+                />
+                <div className={styles.wrapper}>
+                    <div className={cardOpened ? styles.cardActiveWrapper : styles.cardCloseWrapper}>
+                        <div className={styles.cardActive}
+                            style={{
+                                backgroundImage: `url(${(card.url)})`,
+                                backgroundSize: "cover"
+                            }}
+                        >
+                            <div className={styles.close} onClick={() => setCardOpened(false)}>X</div>
+                            <div className={styles.title}>
+                                picture
+                            </div>
 
-                <div className={styles.goal}>
-                    <h1 className={styles.title}>
-                        Activity name
-                    </h1>
-                    <div className={styles.pic}>
+                            <div className={styles.value}>
 
-                    </div>
-                    <div className={styles.title2}>
-                        <span className={styles.text2}>
-                            Goal
-                            </span>
-                    </div>
-                    <section className={styles.value}>
-                        {card?.goal?.value}
-                    </section>
-                </div>
-
-                <section className={styles.card}
-                    onClick={() => setCardOpened(true)}
-                    style={{
-                        backgroundImage:`url(${(card.url)})`,
-                        backgroundSize: "cover"
-                    }}
-                >
-                    <div className={styles.output}>
-                        <div className={styles.title}>picture</div>
-                        <div className={styles.desc}></div>
-                    </div>
-
-                </section>
-
-
-                <div className={styles.info}>
-                    <div className={styles.item}>
-
-                        <div className={styles.title}>
-                            <span className={styles.text}>
-                                Title
-                            </span>
-
-                        </div>
-                        <div className={styles.desc}>
-                            {card.title}
-                        </div>
-                    </div>
-
-                    <div className={styles.item}>
-                        <div className={styles.title}>
-                            <span className={styles.text}>
-                                Duration
-                            </span>
-
-                        </div>
-                        <div className={styles.desc}>
-                            {card.duration}
-                        </div>
-                    </div>
-
-                    <div className={styles.item}>
-                        <div className={styles.title}>
-                            <span className={styles.text}>
-                                Requirments
-                            </span>
-
-                        </div>
-                        <div className={styles.desc}>
-                            {card.requirment}
-                        </div>
-                    </div>
-
-                    <div className={styles.item}>
-                        <div className={styles.title}>
-                            <span className={styles.text}>
-                                Age
-                                     </span>
-                        </div>
-                        <div className={styles.desc}>
-                            {card.age}
-                        </div>
-                    </div>
-
-                    <div className={styles.item}>
-                        <div className={styles.title}>
-                            <span className={styles.text}>
-                                Materials
-                                     </span>
-                        </div>
-                        <div className={styles.desc}>
-                            {card.materials}
-                        </div>
-                    </div>
-
-                    <div className={styles.item}>
-                        <div className={styles.title}>
-                            <span className={styles.text}>
-                                Description
-                            </span>
-                        </div>
-                        <div className={styles.desc}>
-                            <div className={styles.scrolltext}>
-                                {card.extra}
                             </div>
                         </div>
                     </div>
-                </div>
 
+                    <div className={styles.goal}>
+                        <h1 className={styles.title}>
+                            Activity name
+                        </h1>
+                        <div className={styles.pic}>
+
+                        </div>
+                        <div className={styles.title2}>
+                            <span className={styles.text2}>
+                                Description
+                            </span>
+                        </div>
+                        <section className={styles.value}>
+                            {card.description}
+                        </section>
+
+                        <div className={styles.title2}>
+                            <span className={styles.text2}>
+                                Instructions
+                            </span>
+
+                        </div>
+                        <div className={styles.value}>
+                            {card.instructions}
+                        </div>
+
+                    </div>
+
+                    <section className={styles.card}
+                        onClick={() => setCardOpened(true)}
+                        style={{
+                            backgroundImage: `url(${(card.url)})`,
+                            backgroundSize: "cover"
+                        }}
+                    >
+                        <div className={styles.output}>
+                            <div className={styles.title}></div>
+                            <div className={styles.desc}></div>
+                        </div>
+
+                    </section>
+
+
+                    <div className={styles.info}>
+                        <div className={styles.item}>
+
+                            <div className={styles.title}>
+                                <span className={styles.text}>
+                                    Title
+                            </span>
+
+                            </div>
+                            <div className={styles.desc}>
+                                {card.title}
+                            </div>
+                        </div>
+
+                        <div className={styles.item}>
+                            <div className={styles.title}>
+                                <span className={styles.text}>
+                                    Duration
+                            </span>
+
+                            </div>
+                            <div className={styles.desc}>
+                                {card.duration}
+                            </div>
+                        </div>
+
+
+
+                        <div className={styles.item}>
+                            <div className={styles.title}>
+                                <span className={styles.text}>
+                                    Age
+                                     </span>
+                            </div>
+                            <div className={styles.desc}>
+                                {card.age}
+                            </div>
+                        </div>
+
+                        <div className={styles.item}>
+                            <div className={styles.title}>
+                                <span className={styles.text}>
+                                    Materials
+                                     </span>
+                            </div>
+                            <div className={styles.desc}>
+                                {card.materials}
+                            </div>
+                        </div>
+
+                        <div className={styles.item}>
+                            <div className={styles.title}>
+                                <span className={styles.text}>
+                                    Extra
+                            </span>
+                            </div>
+                            <div className={styles.desc}>
+                                <div className={styles.scrolltext}>
+                                    {card.extra}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
-        : null
+            : null
     )
 }
